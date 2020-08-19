@@ -1,0 +1,41 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            // before running this task, run the task "tsc: watch - server/tsconfog.json"
+            "label": "start server",
+            "type": "process",
+            "options": {
+                "cwd": "${workspaceRoot}/server",
+                "env": {
+                    "LOG_LEVEL": "INFO"
+                }
+            },
+            "command": "node",
+            "args": [
+                "node_modules/.bin/nodemon",
+                "out/server/app/www.js"
+            ],
+            "problemMatcher": [
+                "$tsc-watch"
+            ]
+        },
+        {
+            "label": "start client",
+            "type": "shell",
+            "command": "node",
+            "options": {
+                "cwd": "${workspaceRoot}/client"
+            },
+            "args": [
+                "node_modules/.bin/ng",
+                "serve",
+                "--proxy-config",
+                "proxy.conf.json"
+            ],
+            "problemMatcher": "$tsc"
+        }
+    ]
+}

@@ -1,0 +1,38 @@
+<div *ngIf='shouldDisplay'>
+
+  <!-- Bootstrap copyright: Copyright (c) 2011-2016 Twitter, Inc. (MIT License) -->
+  <div class='well'>
+    <table class='table table-striped'>
+        
+      <thead>
+        <tr>
+          <th scope='col'>Game ID</th>
+          <th scope='col'>Host Name</th>
+          <th scope='col'>Mode</th>
+          <th scope='col'>Difficulty</th>
+        </tr>
+      </thead>
+
+      <tbody (clickOutside)='unselect()'>
+
+        <ng-container *ngIf='games.length > 0; else elseBlock'>
+          <ng-container *ngFor='let game of games; let i = index'>
+            <tr [ngClass]='{selected: isSelected(i)}'
+                (click)='select(i)'>
+              <th scope='row'>{{game.id}}</th>
+              <td>{{game.playerName}}</td>
+              <td>{{game.modeAsString()}}</td>
+              <td>{{game.difficultyAsString()}}</td>
+            </tr>
+          </ng-container>
+        </ng-container>
+
+        <ng-template #elseBlock>
+            <td colspan='4' class='no-available-game'>It's quiet in here.. Create your own game?</td>
+        </ng-template>
+
+      </tbody>
+
+    </table>
+  </div>
+</div>

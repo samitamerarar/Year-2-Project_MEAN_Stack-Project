@@ -1,0 +1,18 @@
+<div class="outer">
+  <form (submit)="changePassword()">
+    <div class="inner field">
+      <label for="password">Password</label>
+      <input id="password" [(ngModel)]="password" type="password" placeholder="password" [required]="password === ''" [ngModelOptions]="{standalone: true}"
+      />
+    </div>
+    <div class="inner field">
+      <label for="confirmation">Confirm Password</label>
+      <input id="confirmation" [(ngModel)]="confirmation" type="password" placeholder="password" [required]="confirmation === ''"
+        [ngModelOptions]="{standalone: true}" />
+    </div>
+    <div class="inner buttons">
+      <input type="submit" value="Change password" />
+      <span [ngClass]="{message:true, success: success}">{{statusMessage}}</span>
+    </div>
+  </form>
+</div>

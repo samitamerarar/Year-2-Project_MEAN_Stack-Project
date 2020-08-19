@@ -1,0 +1,6 @@
+<div id="viewSpace" [className]='colorFilterClass' #gameContainer catchInputs #userInputs=$inputs>
+  <canvas id="hud" #hud></canvas>
+  <app-end-view></app-end-view>
+</div>
+<div id="loading-disclaimer" [@gameLoaded]=gameLoaded *ngIf=!gameLoaded></div>
+<span id="loading-message" [@gameLoaded]=gameLoaded *ngIf=!gameLoaded>Loading...</span>

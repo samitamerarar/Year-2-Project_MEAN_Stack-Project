@@ -1,0 +1,12 @@
+.crossword {
+    background: #FFDd65;
+    padding: 20px;
+}
+.racing {
+    background: #44C0AB;
+    padding: 20px;
+}
+
+div {
+    height: 100%;
+}

@@ -1,0 +1,14 @@
+<div>Cheat mode:
+  <br>
+  <button (click)='onCheatModeToggle()'>{{getCheatModeStateText()}}</button>
+  <button *ngIf='isCheatModeOn()' (click)='onShowWordsToggle()'>{{getShowWordsStateText()}}</button>
+  <button *ngIf='isCheatModeOn() && haveTimer()' (click)='onTimerRunningToggle()'>{{getTimerStateText()}}</button>
+  <input
+    #timerInput
+    *ngIf='isTimerBeingSet() && isCheatModeOn()'
+    type='text'
+    (keyup)='checkTimerInput()'
+    (keyup.enter)='changeTimerValue()'
+    size='5px'
+  />
+</div>

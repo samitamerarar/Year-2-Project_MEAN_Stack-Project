@@ -1,0 +1,21 @@
+.best-time-menu h1 {
+    border-bottom: 5px solid #383434;
+    padding-bottom: 10px;
+    color: black;
+}
+
+#actionButtons {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+#actionButtons > * {
+    flex-grow: 1;
+    width: 100%;
+}
+
+button {
+    border-radius: 0px;
+}

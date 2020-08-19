@@ -1,0 +1,35 @@
+.normal {
+    filter: none;
+}
+
+.protanopia {
+    filter: url('./assets/racing/colorblindness-filters.svg#protanopia');
+}
+
+.protanomaly {
+    filter: url('./assets/racing/colorblindness-filters.svg#protanomaly');
+}
+
+.deuteranopia {
+    filter: url('./assets/racing/colorblindness-filters.svg#deuteranopia');
+}
+
+.deuteranomaly {
+    filter: url('./assets/racing/colorblindness-filters.svg#deuteranomaly');
+}
+
+.tritanopia {
+    filter: url('./assets/racing/colorblindness-filters.svg#tritanopia');
+}
+
+.tritanomaly {
+    filter: url('./assets/racing/colorblindness-filters.svg#tritanomaly');
+}
+
+.achromatopsia {
+    filter: url('./assets/racing/colorblindness-filters.svg#achromatopsia');
+}
+
+.achromatomaly {
+    filter: url('./assets/racing/colorblindness-filters.svg#achromatomaly');
+}

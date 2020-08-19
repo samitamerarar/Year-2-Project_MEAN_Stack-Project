@@ -1,0 +1,54 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "Debug Server",
+        "cwd": "${workspaceFolder}/server",
+        "program": "${workspaceFolder}/server/out/server/app/www.js",
+        "env": {
+          "LOG_LEVEL": "INFO"
+        }
+      },
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "Debug Mocha Tests",
+        "cwd": "${workspaceFolder}/server",
+        "program": "${workspaceFolder}/server/node_modules/mocha/bin/_mocha",
+        "args": [ "-r", "ts-node/register", "app/**/*.spec.ts" ],
+        "internalConsoleOptions": "openOnSessionStart"
+      },
+      {
+        "type": "node",
+        "request": "attach",
+        "name": "Attach to Process",
+        "processId": "${command:PickProcess}"
+      },
+      {
+        "type": "chrome",
+        "request": "launch",
+        "name": "Debug client",
+        "url": "http://localhost:4200",
+        "webRoot": "${workspaceRoot}",
+        "sourceMaps": true,
+        "userDataDir": "${workspaceRoot}/.vscode/chrome",
+        "runtimeArgs": [
+          "--disable-session-crashed-bubble"
+        ]
+      },
+      {
+        "type": "chrome",
+        "request": "launch",
+        "name": "Debug client test",
+        "url": "http://localhost:9876",
+        "webRoot": "${workspaceRoot}",
+        "sourceMaps": true,
+        "userDataDir": "${workspaceRoot}/.vscode/chrome",
+        "runtimeArgs": [
+          "--disable-session-crashed-bubble"
+        ]
+      }
+    ]
+  }

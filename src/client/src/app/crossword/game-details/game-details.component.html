@@ -1,0 +1,36 @@
+<div class='table-wrap'>  
+  <table>
+    <thead>
+        <tr>
+            <th>Players</th>
+            <th>Words Found</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class='player'>
+            <td>{{gameService.data.playerName}}</td>
+            <td>{{playerWordsFound}}</td>
+        </tr>
+        <tr class='opponent' *ngIf='gameService.data.currentNumberOfPlayers >= 2'>
+            <td>{{gameService.data.opponentName}}</td>
+            <td>{{opponentWordsFound}}</td>
+        </tr>
+    </tbody>
+  </table>
+  <table class='my-table'>
+      <tbody>
+        <tr>
+            <th class='category'>Game Mode</th>
+            <td>{{gameService.data.modeAsString()}}</td>
+        </tr>
+        <tr>
+            <th class='category'>Difficulty</th>
+            <td>{{gameService.data.difficultyAsString()}}</td>
+        </tr>
+        <tr *ngIf='shouldDisplayTimer()'>
+            <th class='category'>Game Time</th>
+            <td>{{timerValue | date:'mm:ss'}}</td>
+        </tr>
+    </tbody>
+  </table>
+</div>

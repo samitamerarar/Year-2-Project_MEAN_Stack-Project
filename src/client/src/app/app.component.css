@@ -1,0 +1,15 @@
+.app-component-container {
+    top: 50px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    vertical-align: top;
+    overflow:hidden;
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'racing-hud';
+    src: url('/assets/racing/fonts/arcade-classic.ttf');
+}

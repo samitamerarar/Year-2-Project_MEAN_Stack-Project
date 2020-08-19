@@ -1,0 +1,13 @@
+{
+    "points": [{"x": "0", "y": "0"},{"x": "11", "y": "0"},{"x": "0", "y": "10"}],
+    "name": "name",
+    "description": "description",
+    "type": "sdljhgso",
+    "items": {
+        "puddles": [{"distance": "3"}, {"distance": "17"}, {"distance": "22"}],
+        "potholes": [{"distance": "13"}],
+        "speedBoosts": [{"distance": "11"}, {"distance": "12"}, {"distance": "13"}, {"distance": "23"}, {"distance": "27"}]
+    },
+    "rating": "9",
+    "plays": "-1"
+}

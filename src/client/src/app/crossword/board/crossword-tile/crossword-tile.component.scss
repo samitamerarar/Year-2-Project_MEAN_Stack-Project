@@ -1,0 +1,83 @@
+$crossword-item-size: 50px;
+
+$color-valid-item: #76C84B;
+$color-focus-item: #EDFF71;
+
+$color-player-border: rgba(0, 47, 255, 0.7);
+$color-opponent-border: rgba(255, 0, 0, 0.7);
+
+$color-player-background: rgba(0, 47, 255, 0.5);
+$color-opponent-background: rgba(255, 0, 0, 0.5);
+
+$padding-size: 4px;
+$stripe-repeat: 11.75px;
+
+.crossword-board-item {
+	background: transparent;
+	position: relative;
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+	text-transform: uppercase;
+  	width: $crossword-item-size;
+	height: $crossword-item-size;
+	border: 1px solid black;
+
+	user-select: none;
+
+	&:active:not(.black-square),
+	&:focus:not(.black-square) {
+		background: $color-focus-item;
+		border: 1px solid #000000;
+		outline: 1px solid #000000;
+	}
+}
+
+.playerFilled {
+	background-color: $color-player-background;
+}
+
+.opponentFilled {
+	background-color: $color-opponent-background;
+}
+
+.bothFilled {
+	background: repeating-linear-gradient(
+		45deg,
+		$color-opponent-background,
+		$color-opponent-background $stripe-repeat / 2,
+		$color-player-background $stripe-repeat / 2,
+		$color-player-background $stripe-repeat
+	  );
+}
+
+.playerHighlighted {
+	background: linear-gradient(white, white), $color-player-border;
+	padding: $padding-size;
+	background-origin: content-box, padding-box;
+	background-clip: content-box, padding-box;
+}
+
+.opponentHighlighted {
+	background: linear-gradient(white, white), $color-opponent-border;
+	padding: $padding-size;
+	background-origin: content-box, padding-box;
+	background-clip: content-box, padding-box;
+}
+
+.bothHighlighted {
+	background: linear-gradient(white, white), repeating-linear-gradient(
+		-45deg,
+		$color-opponent-border,
+		$color-opponent-border $stripe-repeat / 2,
+		$color-player-border $stripe-repeat / 2,
+		$color-player-border $stripe-repeat
+	);
+	padding: $padding-size;
+	background-origin: content-box, padding-box;
+	background-clip: content-box, padding-box;
+}
+
+.black-square {
+	background: rgba(0, 0, 0, 0.8);
+}

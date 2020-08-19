@@ -1,0 +1,66 @@
+<br>
+<div [ngSwitch]='cheatMode'>
+
+  <div *ngSwitchCase='false' class='box-data' id='definition-box' (clickOutside)='onClickOutside()'>
+
+    <div class='across-words'>
+      <h3 class='title' (click)='isCollapsedAcross()'>Across Words</h3>
+      <div *ngIf='acrossCollapsed'>
+        <div *ngFor='let definition of definitions.horizontal; let i = index;' class='definition'>
+          <div 
+            [class.player-selected]='checkIfSelectedByPlayer(i + 1, HORIZONTAL)'
+            [class.opponent-selected]='checkIfSelectedByOpponent(i + 1, HORIZONTAL)'
+            [class.found]='checkIfFound(i + 1, HORIZONTAL)' 
+            (click)='onDefinitionClicked(i + 1, HORIZONTAL)'>
+            <p class='definition'>{{i+1}}. {{definition.text}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class='vertical-words'>
+      <h3 class='title' (click)='isCollapsedVertical()'>Vertical Words</h3>
+      <div *ngIf='verticalCollapsed'>
+        <div *ngFor='let definition of definitions.vertical; let j = index;' class='definition'>
+          <div
+            [class.player-selected]='checkIfSelectedByPlayer(j + 1, VERTICAL)'
+            [class.opponent-selected]='checkIfSelectedByOpponent(j + 1, VERTICAL)'
+            [class.found]='checkIfFound(j + 1, VERTICAL)'
+            (click)='onDefinitionClicked(j + 1, VERTICAL)'>
+            <p class='definition'>{{j+1}}. {{definition.text}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div *ngSwitchCase='true' class='box-data' id='word-box' (clickOutside)='onClickOutside()'>
+    
+    <div class='across-words'>
+      <h3 class='title'>Across Words</h3>
+      <div *ngFor='let answer of answers.horizontal; let i = index;'>
+        <div
+          [class.player-selected]='checkIfSelectedByPlayer(i + 1, HORIZONTAL)'
+          [class.opponent-selected]='checkIfSelectedByOpponent(i + 1, HORIZONTAL)'
+          [class.found]='checkIfFound(i + 1, HORIZONTAL)'
+          (click)='onDefinitionClicked(i + 1, HORIZONTAL)'>
+          <p class='definition'>{{i+1}}. {{answer}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class='vertical-words'>
+      <h3 class='title'>Vertical Words</h3>
+      <div *ngFor='let answer of answers.vertical; let j = index;'>
+        <div
+          [class.player-selected]='checkIfSelectedByPlayer(j + 1, VERTICAL)'
+          [class.opponent-selected]='checkIfSelectedByOpponent(j + 1, VERTICAL)'
+          [class.found]='checkIfFound(j + 1, VERTICAL)'
+          (click)='onDefinitionClicked(j + 1, VERTICAL)'>
+          <p class='definition'>{{j+1}}. {{answer}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

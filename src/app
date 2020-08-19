@@ -1,0 +1,51 @@
+#!/bin/bash
+
+function usage() {
+	echo "usage: app start|stop|lint|test|update"
+}
+
+if [ "$#" -ne 1 ]; then
+	usage
+elif [ $1 = "start" ]; then
+	cd ./server/
+	npm start&
+	cd ../client/
+	npm start >/dev/null&
+
+	cd ..
+elif [ $1 = "stop" ]; then
+	kill `pidof @angular/cli`; kill `pidof node`
+elif [ $1 = "lint" ]; then
+	cd ./server/
+	echo "[server] linting..."
+	npm run lint
+	cd ../common/
+	echo "[common] linting..."
+	npm run lint
+	cd ../client/
+	echo "[client] linting..."
+	npm run lint
+	cd ..
+elif [ $1 = "test" ]; then
+	cd ./server/
+	echo "[server] testing..."
+	npm test
+	cd ../common/
+	echo "[common] testing..."
+	npm test
+	cd ../client/
+	echo "[client] testing..."
+	npm test -- --single-run --log-level NONE
+	cd ..
+elif [ $1 = "update" ]; then
+    cd ./common/
+    npm install
+	cd ../server/
+	npm install&
+	cd ../client/
+	npm install&
+	cd ..
+else
+	usage 
+fi
+

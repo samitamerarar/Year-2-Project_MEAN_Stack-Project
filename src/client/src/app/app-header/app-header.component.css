@@ -1,0 +1,46 @@
+#app-header {
+    position: fixed;
+    top: 0;
+    height: 40px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background: black;
+    z-index: 1;
+    border-radius: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    border: 0;
+    color: white;
+    font-family: 'Lobster', cursive;
+}
+
+#app-header > * {
+    height: 100%;
+    min-width: min-content;
+    margin: 0px;
+    padding: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: black;
+    border: none;
+    transition: background-color 0.5s, border-bottom 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 0px solid purple;
+    font-size: 100%;
+}
+
+#app-header > *:first-child {
+    font-size: 175%;
+    color: purple;
+}
+
+#app-header > *:hover {
+    background-color: #333;
+    border-bottom: 5px solid purple;
+}

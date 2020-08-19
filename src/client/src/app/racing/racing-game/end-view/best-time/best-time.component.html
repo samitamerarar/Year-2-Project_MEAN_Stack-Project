@@ -1,0 +1,42 @@
+<div class='best-time-menu' >
+
+<!-- Bootstrap copyright: Copyright (c) 2011-2016 Twitter, Inc. (MIT License) -->
+
+  <h1>{{endViewService.mapName}}<br/> Top 5 Best times</h1>
+
+  <table class='table table-striped'>
+
+    <thead>
+      <tr>
+        <th scope='col'>Rank</th>
+        <th scope='col'>Player Name</th>
+        <th scope='col'>Player Time</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <ng-container *ngFor='let bestTime of endViewService.mapBestTimes; let rank = index'>
+        <tr>
+          <th scope='row'>{{rank + 1}}</th>
+          <td>{{bestTime.player.name}}</td>
+          <td>{{bestTime.value * 1000 | date:'mm:ss'}}</td>
+        </tr>
+      </ng-container>
+
+    </tbody>
+
+  </table>
+
+  <div *ngIf = 'endViewService.userIsInMapBestTimes()'>
+    <h3>Congratulation, you managed to score in the top 5 best times of the map</h3>
+    <label>Enter Your Name: </label><input type='text' [(ngModel)]='userName'/>
+    <button (click)='inscribeOnMapBestTimes()' [disabled]='inscribeButton' type=button class='btn btn-default'>Inscribe</button>
+  </div>
+
+  <div class='btn-group' id='actionButtons' role='group' aria-label='Item Quantity Change Buttons' data-toggle='buttons'>
+    <button (click)='reloadPage()' type=button class='btn btn-default btn-lg'>Play Again</button>
+    <button (click)='endViewService.reset()' routerLink='/' type=button class='btn btn-default btn-lg'>Return to Homepage</button>
+  </div>
+
+</div>

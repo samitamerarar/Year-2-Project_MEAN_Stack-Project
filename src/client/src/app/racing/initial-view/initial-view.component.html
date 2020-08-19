@@ -1,0 +1,28 @@
+<div class='page-container'>
+  <h1 id='page-title'>Racing Maps</h1>
+  <table class='map-list'>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Average rating</th>
+        <th># of times played</th>
+        <th>Thumbnail</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="maps" *ngFor="let map of maps" [class.selected]="map === selectedMap" (click)="mapSelected(map)">
+        <td>{{map.name}}</td>
+        <td>{{map.type}}</td>
+        <td>{{map.description}}</td>
+        <td>{{map.sumRatings > 0 ? (map.sumRatings / map.numberOfRatings).toPrecision(3) : 'Not yet rated'}}</td>
+        <td>{{map.numberOfPlays}}</td>
+        <td>
+          <app-map-thumbnail class="thumbnail" [width]="300" [map]="map"></app-map-thumbnail>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<app-map-best-time [map]="selectedMap"></app-map-best-time>

@@ -1,0 +1,45 @@
+<div class='disclaimer' *ngIf='displayable'></div>
+<div class='outer' *ngIf='map' [ngClass]='{hide_me: !displayable, show_me: displayable}' (click)='displayable = !displayable'>
+  <div class='best-time-menu'>
+    <h2>{{map.name}}</h2>
+
+    <!-- Bootstrap copyright: Copyright (c) 2011-2016 Twitter, Inc. (MIT License) -->
+
+    <table class='table table-striped'>
+
+      <thead>
+        <tr>
+          <th scope='col'>Rank</th>
+          <th scope='col'>Player Name</th>
+          <th scope='col'>Player Time</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <ng-container *ngIf='map.bestTimes.length > 0; else elseBlock'>
+          <ng-container *ngFor='let bestTime of map.bestTimes; let rank = index'>
+            <tr>
+              <th scope='row'>{{rank + 1}}</th>
+              <td>{{bestTime.player.name}}</td>
+              <td>{{bestTime.value * 1000 | date:'mm:ss'}}</td>
+            </tr>
+          </ng-container>
+        </ng-container>
+
+        <ng-template #elseBlock>
+            <tr>
+              <td colspan='3' class='no-best-time'>No time recorded yet!</td>
+            </tr>
+        </ng-template>
+
+      </tbody>
+
+    </table>
+
+    <button routerLink='racing-game/{{map.name}}' type='button' class='btn btn-secondary btn-lg btn-block' data-toggle='button' aria-pressed='false' autocomplete='off'>
+      Play Map
+    </button>
+
+  </div>
+</div>

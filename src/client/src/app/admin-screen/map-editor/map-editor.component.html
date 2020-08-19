@@ -1,0 +1,52 @@
+<div class="mapEditionScreen-outer">
+  <div class="mapEditionScreen">
+    <div class="mapParameters">
+      <div>
+        <div class="input-group">
+          <span class="input-group-addon" id="Map Name Label">Name</span>
+          <input [(ngModel)]="internalMap.name" type="text" class="form-control" placeholder="Map Name" aria-describedby="Map Name Input">
+        </div>
+      </div>
+      <div>
+        <label>Type:</label>
+        <div class="btn-group" role="group" aria-label="Type Selection Buttons" data-toggle="buttons">
+          <ng-container *ngFor="let type of mapTypes">
+            <button type=button class="btn btn-default" [ngClass]="{active: internalMap.type === type}" (click)="internalMap.type = type">{{type}}</button>
+          </ng-container>
+        </div>
+      </div>
+      <div>
+        <div class="input-group">
+          <span class="input-group-addon" id="Map Description Label">Description</span>
+          <textarea [(ngModel)]="internalMap.description" type="text" cols="50" class="form-control" placeholder="Map Description" aria-describedby="Map Description Input"></textarea>
+        </div>
+      </div>
+      <div>
+        <label>Change item quantity:</label>
+        <div class="btn-group" role="group" aria-label="Item Quantity Change Buttons" data-toggle="buttons">
+          <button (click)="potholes()"    [disabled]="!isMapValid" type=button class="btn btn-default">Potholes</button>
+          <button (click)="puddles()"     [disabled]="!isMapValid" type=button class="btn btn-default">Puddle</button>
+          <button (click)="speedBoosts()" [disabled]="!isMapValid" type=button class="btn btn-default">Speed Boost</button>
+        </div>
+      </div>
+      <div>
+        <label>Change item positions:</label>
+        <div class="btn-group" role="group" aria-label="Item Quantity Change Buttons" data-toggle="buttons">
+          <button (click)="randomisePotholes()"    [disabled]="!isMapValid" type=button class="btn btn-default">Potholes</button>
+          <button (click)="randomisePuddles()"     [disabled]="!isMapValid" type=button class="btn btn-default">Puddle</button>
+          <button (click)="randomiseSpeedBoosts()" [disabled]="!isMapValid" type=button class="btn btn-default">Speed Boost</button>
+        </div>
+      </div>
+      <div class="btn-group" id="actionButtons" role="group" aria-label="Item Quantity Change Buttons" data-toggle="buttons">
+        <button (click)="saveMap()"   [disabled]="!canMapBeSaved"   type=button class="btn btn-default btn-lg btn-primary">Save Map</button>
+        <button (click)="deleteMap()" [disabled]="!canMapBeDeleted" type=button class="btn btn-default btn-lg btn-danger" >Delete</button>
+      </div>
+    </div>
+    <div class="editionArea">
+      <h3>This is the space to edit your map</h3>
+      <canvas class="creationSpace" #editingArea [width]="width" [height]="height" (click)="clicked($event)" (mousedown)="mouseDown($event)"
+        (mouseup)="mouseUp($event)" (contextmenu)="clicked($event)" (mousemove)="mouseMoved($event)">
+      </canvas>
+    </div>
+  </div>
+</div>

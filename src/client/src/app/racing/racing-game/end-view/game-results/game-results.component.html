@@ -1,0 +1,24 @@
+<div class = 'map-rating-menu' >
+    <h1>Map Rating</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Players</th>
+          <th *ngFor='let lap of laps[0][1]; let i = index'>Lap {{i+1}}</th>
+          <th>Total Time</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor='let carTimes of laps; let i = index'>
+            <td>{{carTimes[0].name}} car</td>
+            <td *ngFor='let lap of carTimes[1]; let j = index'>{{lap}}</td>
+            <td>{{carTimes[2]}}</td>
+          </tr>
+      </tbody>
+    </table>
+    <div class='rating-title'>You can leave your rating</div>
+    <div class = 'five-stars'>
+        <img *ngFor = 'let index of [0, 1, 2, 3, 4]' [src] = 'stars[index]' (mouseenter) = 'mouseHoverStar(index)' (mouseleave) = 'mouseOutOfStar()' (click) = 'clickOnStar(index)'>
+    </div>
+    <button (click) = 'displayBestTimeComponent()'>Next</button>
+</div>

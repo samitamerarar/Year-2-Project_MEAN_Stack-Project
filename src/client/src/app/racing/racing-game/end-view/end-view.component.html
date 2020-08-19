@@ -1,0 +1,13 @@
+<div [ngSwitch]='endViewService.displayGameResult' *ngIf="endViewService.displayGameResult !== EndGameWindow.NONE">
+  <div class='disclaimer'></div>
+  <div class='outer'>
+    <div class='window'>
+      <div *ngSwitchCase='EndGameWindow.MAP_RATING'>
+        <app-game-results></app-game-results>
+      </div>
+      <div *ngSwitchCase='EndGameWindow.BEST_TIME'>
+        <app-best-time></app-best-time>
+      </div>
+    </div>
+  </div>
+</div>

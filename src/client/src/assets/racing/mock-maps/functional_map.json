@@ -1,0 +1,13 @@
+{
+    "points": [{"x": "0", "y": "0"},{"x": "10", "y": "0"},{"x": "0", "y": "10"}],
+    "name": "name",
+    "description": "description",
+    "type": "professional",
+    "items": {
+        "puddles": [{"distance": "11"}, {"distance": "17"}, {"distance": "22"}],
+        "potholes": [{"distance": "15"}],
+        "speedBoosts": [{"distance": "1"}, {"distance": "6"}, {"distance": "6"}, {"distance": "23"}, {"distance": "27"}]
+    },
+    "rating": "4",
+    "plays": "12"
+}

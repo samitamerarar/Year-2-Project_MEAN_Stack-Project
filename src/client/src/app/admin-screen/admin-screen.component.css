@@ -1,0 +1,69 @@
+.outer-container {
+    display: flex;
+    flex-direction: row;
+    margin: left;
+    height: 100%;
+    width: 100%;
+}
+
+.listContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 250px;
+    padding: 0;
+    border-right: 1px solid black;
+}
+.mapList {
+    flex-grow: 1;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    overflow: auto;
+    border-right: 1px solid #D4DCDF;
+}
+
+.tableTitle {
+    color:#00B7FF;
+    background:#FFFFFF;
+    border-bottom:4px solid #00AEFF;
+    border-right: 1px solid #D4DCDF;
+    font-size:20px;
+    padding:24px;
+    text-align:center;
+    font-family: Ubuntu;
+    text-shadow: 2px 2px 5px lightgrey;
+}
+
+.maps {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+.maps:hover {
+    background: linear-gradient(-90deg, white, #00A2FF 20%, #00A2FF 80%, white);
+    cursor: pointer;
+    color:#FFFFFF;
+}
+
+.map-name-container {
+    width: 70%;
+    text-align:center;
+    font-size:18px;
+    font-family: Ubuntu;
+    padding: 10px 0px;
+    margin: 0px 15%;
+    border-top: none;
+    border-bottom: 1px solid #888;
+}
+
+.no-select * {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
+}

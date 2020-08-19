@@ -1,0 +1,27 @@
+<div class="disclaimer" *ngIf="shouldBeDisplayed"></div>
+<div class="outer-menu" *ngIf="shouldBeDisplayed">
+  <div class="menu" *ngIf="!waiting">
+    <h2 class="text-center">Make a Choice!</h2>
+    <div class="menu-page-container" [ngSwitch]="menuAutomaton.state">
+      <div
+        class="menu-page"
+        [ngClass]="{'active-page': true}">
+        <h4>{{menuAutomaton.state.name}}</h4>
+        <app-available-games [shouldDisplay]="shouldShowAvailableGames"></app-available-games>
+
+        <ng-container *ngSwitchCase="menuAutomaton.states.confirm">
+          <app-confirmation></app-confirmation>
+        </ng-container>
+        <ng-container *ngSwitchDefault>
+          <button
+            *ngFor="let option of menuAutomaton.state.options"
+            (click)="menuAutomaton.chooseOption(option)">{{option.name}}</button>
+          <button
+            *ngIf="menuAutomaton.canGoBack()"
+            (click)="menuAutomaton.goBack()">Back</button>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  <app-waiting></app-waiting>
+</div>

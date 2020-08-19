@@ -1,0 +1,9 @@
+<div class="center">
+  <b>Name:</b> <input [(ngModel)]="userChoiceService.playerName"/>
+</div>
+<button
+  *ngFor="let option of menuAutomaton.state.options"
+  (click)="menuAutomaton.chooseOption(option)">{{option.name}}</button>
+<button
+  *ngIf="menuAutomaton.canGoBack()"
+  (click)="menuAutomaton.goBack()">Back</button>

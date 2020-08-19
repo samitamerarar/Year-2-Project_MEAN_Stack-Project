@@ -1,0 +1,21 @@
+.selected > td.active:hover,
+.selected > th.active:hover,
+.selected > td,
+.selected > .active,
+.selected > th {
+    background-color: #e8e8e8;
+}
+
+.no-available-game {
+    text-align: center;
+    padding-bottom: 5px
+}
+
+.well {
+    padding: 0px;
+    text-shadow: none;
+}
+
+.table {
+    margin-bottom: 0px;
+}
