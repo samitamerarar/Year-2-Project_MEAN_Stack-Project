@@ -10,5 +10,5 @@ LOG2990 -- Team #1
 The API for words definitions Wordnik does not respond anymore. The crossword game might not work properly.
 
 ## Authors
-Emir BELHADDAD, Anthony DENTINGER, Adam Martin CÔTÉ,
-Pascal LACASSE, Eric CHAO, Sami Tamer ARAR
+Emir Belhaddad, Anthony Dentinger, Adam Martin Côté,
+Pascal Lacasse, Eric Chao, Sami Tamer Arar
