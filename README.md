@@ -1,9 +1,9 @@
 LOG2990 -- Team #1
-===================
+==================
 
-## Available
+## Demo
 
-
+![](project1.gif)
 
 ## Note
 
