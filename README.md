@@ -3,7 +3,7 @@ LOG2990 -- Team #1
 
 ## Demo
 
-![](project1.gif)
+![](project2.gif)
 
 ## Note
 
