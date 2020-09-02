@@ -5,9 +5,9 @@ LOG2990 -- Team #1
 
 ![](project2.gif)
 
-## Note
+## Description
 
-The API for words definitions Wordnik does not respond anymore. The crossword game might not work properly.
+Crossword (single-player & multiplayer) and 3D Racing game (single-player) using MEAN (MongoDB, Express, Angular, NodeJS), Socket.IO, Three.js and more.
 
 ## Authors
 Emir Belhaddad, Anthony Dentinger, Adam Martin Côté,
